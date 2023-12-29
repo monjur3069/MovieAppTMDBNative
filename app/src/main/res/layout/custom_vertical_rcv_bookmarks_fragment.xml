@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/custom_shape_oval_bookmark"
+    android:elevation="40dp"
+    android:padding="5dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginTop="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<ImageView
+    android:id="@+id/ivPictureRCvBookmarks"
+    android:layout_width="120dp"
+    android:layout_height="140dp"
+    android:src="@drawable/demo_movie"
+    android:layout_marginStart="8dp"
+    android:scaleType="fitXY"
+    android:background="@drawable/custom_shape_bordered_image"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvMovieNameBookmarksFrag"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Spiderman No way home"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/ivPictureRCvBookmarks"
+        app:layout_constraintTop_toTopOf="@id/ivPictureRCvBookmarks"/>
+
+    <ImageView
+        android:id="@+id/ivDeleteBookMarks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/baseline_delete_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvMovieNameBookmarksFrag" />
+
+    <ImageView
+        android:id="@+id/ivStar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/star"
+        app:layout_constraintStart_toStartOf="@id/tvMovieNameBookmarksFrag"
+        app:layout_constraintTop_toBottomOf="@id/tvMovieNameBookmarksFrag" />
+
+    <TextView
+        android:id="@+id/tvVerticalBookmarksFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="9"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivStar"
+        app:layout_constraintStart_toEndOf="@id/ivStar"
+        app:layout_constraintTop_toTopOf="@id/ivStar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/ 10"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvVerticalBookmarksFrag"
+        app:layout_constraintStart_toEndOf="@id/tvVerticalBookmarksFrag"
+        app:layout_constraintTop_toTopOf="@id/tvVerticalBookmarksFrag" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvHorizontalBookmarksFragment"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        tools:listitem="@layout/custom_horizontal_rcv_details_fragment"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ivStar"
+        app:layout_constraintStart_toStartOf="@id/tvMovieNameBookmarksFrag"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+    <ImageView
+        android:id="@+id/ivMovieTimeBookmarksFragment"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/rcvHorizontalBookmarksFragment"
+        app:layout_constraintStart_toStartOf="@id/ivStar"
+        android:src="@drawable/clock_movie_time"/>
+
+    <TextView
+        android:id="@+id/tvMovieTimeVerticalDeleteFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textStyle="bold"
+        android:text="1 h"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@id/ivMovieTimeBookmarksFragment"
+        app:layout_constraintStart_toEndOf="@id/ivMovieTimeBookmarksFragment"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
